@@ -1,0 +1,36 @@
+{
+  "name": "dhtkv",
+  "version": "1.0.0",
+  "description": "cli for storing key/value data in the bittorrent mainline dht",
+  "main": "index.js",
+  "bin": {
+    "dhtkv": "index.js"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "keywords": [
+    "bittorrent",
+    "torrent",
+    "dht",
+    "kademlia",
+    "cli"
+  ],
+  "author": "max ogden",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxogden/dhtkv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxogden/dhtkv/issues"
+  },
+  "homepage": "https://github.com/maxogden/dhtkv#readme",
+  "dependencies": {
+    "bittorrent-dht": "feross/bittorrent-dht#fix-immutable-put-get",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "standard": "^5.3.1"
+  }
+}
