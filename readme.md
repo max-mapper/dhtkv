@@ -8,6 +8,6 @@ CLI for storing key/value data in the bittorrent mainline DHT. relies on the rec
 $ dhtkv put "hello world"
 23bd9c8eefcd7f7bab73c148d4f025f5ed4ae669
 
-$ dht get 23bd9c8eefcd7f7bab73c148d4f025f5ed4ae669
+$ dhtkv get 23bd9c8eefcd7f7bab73c148d4f025f5ed4ae669
 hello world
 ```
