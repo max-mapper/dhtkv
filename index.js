@@ -11,7 +11,7 @@ if (!first) {
 }
 
 var dht = new DHT()
-dht.on('ready', route)
+route()
 
 function route () {
   if (first === 'get') {
@@ -22,14 +22,10 @@ function route () {
     })
     return
   }
-  
+
   if (first === 'put') {
-    dht.put({v: second}, function (errors, hash) {
-      if (errors) {
-        errors.forEach(function (e) {
-          console.log(e)
-        })
-      }
+    dht.put({v: second}, function (err, hash) {
+      if (err) throw err
       if (hash) console.log(hash.toString('hex'))
       process.exit(0)
     })

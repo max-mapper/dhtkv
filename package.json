@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/maxogden/dhtkv#readme",
   "dependencies": {
-    "bittorrent-dht": "feross/bittorrent-dht#fix-immutable-put-get",
+    "bittorrent-dht": "^6.0.0",
     "minimist": "^1.2.0"
   },
   "devDependencies": {
