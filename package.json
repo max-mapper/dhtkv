@@ -1,6 +1,6 @@
 {
   "name": "dhtkv",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "cli for storing key/value data in the bittorrent mainline dht",
   "main": "index.js",
   "bin": {
