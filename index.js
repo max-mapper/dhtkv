@@ -17,7 +17,8 @@ function route () {
   if (first === 'get') {
     dht.get(second, function (err, res) {
       if (err) throw err
-      console.log(res.v.toString())
+      if (res) console.log(res.v.toString())
+      else console.error('Could not find ' + second)
       process.exit(0)
     })
     return
