@@ -15,20 +15,24 @@ route()
 
 function route () {
   if (first === 'get') {
-    dht.get(second, function (err, res) {
-      if (err) throw err
-      if (res) console.log(res.v.toString())
-      else console.error('Could not find ' + second)
-      process.exit(0)
+    dht.on('ready', function() {
+      dht.get(second, function (err, res) {
+        if (err) throw err
+        if (res) console.log(res.v.toString())
+        else console.error('Could not find ' + second)
+        process.exit(0)
+      })
     })
     return
   }
 
   if (first === 'put') {
-    dht.put({v: second}, function (err, hash) {
-      if (err) throw err
-      if (hash) console.log(hash.toString('hex'))
-      process.exit(0)
+    dht.on('ready', function() {
+      dht.put({v: second}, function (err, hash) {
+        if (err) throw err
+        if (hash) console.log(hash.toString('hex'))
+        process.exit(0)
+      })
     })
     return
   }
