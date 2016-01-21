@@ -6,7 +6,7 @@ var first = args._[0]
 var second = args._[1]
 
 if (!first) {
-  console.log('Usage: dhtkv <command>')
+  console.log('Usage: dhtkv <put|get|announce|lookup>')
   process.exit(1)
 }
 
@@ -30,6 +30,24 @@ function route () {
       if (hash) console.log(hash.toString('hex'))
       process.exit(0)
     })
+    return
+  }
+
+  if (first === 'announce') {
+    dht.announce(second, function (err) {
+      if (err) throw err
+      console.log('announce success')
+      process.exit(0)
+    })
+    return
+  }
+
+  if (first === 'lookup') {
+    dht.on('peer', function (peer, infoHash, from) {
+      console.log(JSON.stringify(peer))
+    })
+
+    dht.lookup(second)
     return
   }
 
